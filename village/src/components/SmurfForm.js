@@ -13,6 +13,24 @@ class SmurfForm extends Component {
     };
   }
 
+  async componentDidMount() {
+    const { smurfId } = this.props.match.params;
+
+    let smurfData = await axios.get("http://localhost:3333/smurfs");
+    if (smurfData.status === 200) {
+      smurfData = smurfData.data;
+      let smurf = smurfData.find(
+        singleSmurf => singleSmurf.id === parseInt(smurfId)
+      );
+      if (smurf) {
+        this.setState({
+          name: smurf.name || "",
+          age: smurf.age || "",
+          height: smurf.height || ""
+        });
+      }
+    }
+  }
   addSmurf = event => {
     event.preventDefault();
     // add code to create the smurf using the api
