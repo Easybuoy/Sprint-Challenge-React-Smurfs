@@ -38,7 +38,6 @@ class SmurfForm extends Component {
   updateSmurf = e => {
     e.preventDefault();
     const { smurfId } = this.props.match.params;
-    console.log(smurfId);
 
     const payload = {
       name: this.state.name,
