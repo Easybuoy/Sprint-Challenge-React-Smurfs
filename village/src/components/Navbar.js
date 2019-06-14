@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav>
-      <div>
-        <NavLink to="/">Smurfs</NavLink>
-      </div>
-      <div>
-        <NavLink to="smurf-form">Add Smurf</NavLink>
-      </div>
+    <nav className="Navbar">
+      <NavLink to="/">
+        <div>Smurfs</div>
+      </NavLink>
+      <NavLink to="smurf-form">
+        <div>Add Smurf</div>
+      </NavLink>
     </nav>
   );
 }

@@ -27,20 +27,19 @@ class Smurfs extends Component {
     return (
       <div className="Smurfs">
         <h1>Smurf Village</h1>
-        <ul>
-          {this.state.smurfs.map(smurf => {
-            return (
-              <Smurf
-                name={smurf.name}
-                id={smurf.id}
-                age={smurf.age}
-                height={smurf.height}
-                key={smurf.id}
-                deleteSmurf={this.deleteSmurf}
-              />
-            );
-          })}
-        </ul>
+
+        {this.state.smurfs.map(smurf => {
+          return (
+            <Smurf
+              name={smurf.name}
+              id={smurf.id}
+              age={smurf.age}
+              height={smurf.height}
+              key={smurf.id}
+              deleteSmurf={this.deleteSmurf}
+            />
+          );
+        })}
       </div>
     );
   }
